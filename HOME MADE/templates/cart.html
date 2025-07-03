@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <style>
+        body { background-color: #F0F8FF; font-family: sans-serif; padding: 20px; }
+        table { width: 60%; margin: auto; border-collapse: collapse; background: #fff; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ccc; }
+        h1 { text-align: center; color: #333; }
+        .total { font-weight: bold; }
+        .empty { text-align: center; font-size: 18px; color: #666; }
+        a { display: block; text-align: center; margin-top: 20px; color: #007BFF; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Your Shopping Cart</h1>
+
+    {% if cart and cart|length > 0 %}
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+        </tr>
+        {% set total = 0 %}
+        {% for item in cart %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>₹{{ item.price }}</td>
+        </tr>
+        {% set total = total + item.price %}
+        {% endfor %}
+        <tr>
+            <td class="total">Total</td>
+            <td class="total">₹{{ total }}</td>
+        </tr>
+    </table>
+    {% else %}
+    <p class="empty">No items yet!</p>
+    {% endif %}
+
+    <a href="{{ url_for('non_veg_pickles') }}">← Back to Pickles</a>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vegetarian Pickles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8f0;
+            text-align: center;
+        }
+        h1 {
+            margin: 30px;
+            color: #e67e22;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .item {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            width: 220px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+        .item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .item h3 {
+            margin: 10px 0 5px;
+        }
+        .item p {
+            margin: 5px 0;
+            font-weight: bold;
+            color: #444;
+        }
+        .item button {
+            padding: 8px 16px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .item button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>Veg Pickles</h1>
+    <div class="grid">
+    <div class="item">
+        <img src="{{ url_for('static', filename='images/Avakaya pickle.jpg') }}" alt="Avakaya Pickle">
+        <h3>Avakaya Pickle</h3>
+        <p>₹110</p>
+        <form action="{{ url_for('add_to_cart', product_id=1) }}" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="item">
+        <img src="{{ url_for('static', filename='images/Amla pickle.jpg') }}" alt="Amla Pickle">
+        <h3>Amla Pickle</h3>
+        <p>₹100</p>
+        <form action="{{ url_for('add_to_cart', product_id=2) }}" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="item">
+        <img src="{{ url_for('static', filename='images/Tomato pickle.jpg') }}" alt="Tomato Pickle">
+        <h3>Tomato Pickle</h3>
+        <p>₹95</p>
+        <form action="{{ url_for('add_to_cart', product_id=3) }}" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="item">
+        <img src="{{ url_for('static', filename='images/lemon_pickle.jpg') }}" alt="Lemon Pickle">
+        <h3>Lemon Pickle</h3>
+        <p>₹90</p>
+        <form action="{{ url_for('add_to_cart', product_id=4) }}" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="item">
+        <img src="{{ url_for('static', filename='images/mixed pickle.jpg') }}" alt="Mixed Pickle">
+        <h3>Mixed Pickle</h3>
+        <p>₹105</p>
+        <form action="{{ url_for('add_to_cart', product_id=5) }}" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="item">
+        <img src="{{ url_for('static', filename='images/gongura pickle.jpg') }}" alt="Gongura Pickle">
+        <h3>Gongura Pickle</h3>
+        <p>₹120</p>
+        <form action="{{ url_for('add_to_cart', product_id=6) }}" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="item">
+        <img src="{{ url_for('static', filename='images/pickles boxes.jpg') }}" alt="Pickles Box">
+        <h3>Pickles Box</h3>
+        <p>₹250</p>
+        <form action="{{ url_for('add_to_cart', product_id=7) }}" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <div class="item">
+        <img src="{{ url_for('static', filename='images/pickles.jpg') }}" alt="Mixed Veg Pickle">
+        <h3>Mixed Veg Pickle</h3>
+        <p>₹100</p>
+        <form action="{{ url_for('add_to_cart', product_id=8) }}" method="POST">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
